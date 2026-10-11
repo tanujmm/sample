@@ -1,0 +1,388 @@
+.stage {
+  position: relative;
+  isolation: isolate;
+  min-height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #7a2438 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 10%, #c45c6a 0%, transparent 50%),
+    linear-gradient(165deg, #3a121c 0%, #6b2233 42%, #8c3044 100%);
+  color: #fff7f4;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-a {
+  width: 280px;
+  height: 280px;
+  background: #ffb3c1;
+  top: 12%;
+  left: 8%;
+  animation: float 9s ease-in-out infinite;
+}
+
+.glow-b {
+  width: 340px;
+  height: 340px;
+  background: #ffd6a5;
+  right: -40px;
+  bottom: 8%;
+  animation: float 11s ease-in-out infinite reverse;
+}
+
+.petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  width: 14px;
+  height: 18px;
+  background: radial-gradient(circle at 30% 30%, #ffd0d8, #e35d73 70%);
+  border-radius: 70% 10% 70% 10%;
+  opacity: 0.55;
+  animation: petal-fall 14s linear infinite;
+}
+
+.petal-1 { left: 8%; animation-delay: 0s; }
+.petal-2 { left: 18%; animation-delay: 2s; width: 10px; height: 13px; }
+.petal-3 { left: 28%; animation-delay: 5s; }
+.petal-4 { left: 42%; animation-delay: 1.4s; }
+.petal-5 { left: 55%; animation-delay: 3.2s; width: 12px; height: 16px; }
+.petal-6 { left: 66%; animation-delay: 7s; }
+.petal-7 { left: 74%; animation-delay: 0.8s; }
+.petal-8 { left: 82%; animation-delay: 4.4s; }
+.petal-9 { left: 90%; animation-delay: 6.1s; }
+.petal-10 { left: 36%; animation-delay: 8.5s; }
+.petal-11 { left: 12%; animation-delay: 9.2s; }
+.petal-12 { left: 61%; animation-delay: 11s; }
+
+.ask,
+.celebrate {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  opacity: 0.78;
+  margin-bottom: 18px;
+}
+
+.ask h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.4rem, 7vw, 5.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  max-width: 16ch;
+}
+
+.ask h1 span {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.15em;
+  color: #ffd9b0;
+  margin-top: 6px;
+}
+
+.sub {
+  margin-top: 18px;
+  opacity: 0.82;
+  font-size: 1rem;
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  gap: 22px;
+  margin-top: 42px;
+  min-height: 72px;
+  align-items: center;
+  justify-content: center;
+}
+
+.yes,
+.no {
+  border: 0;
+  min-width: 124px;
+  height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.yes {
+  background: linear-gradient(180deg, #fff4ea 0%, #ffd0c2 100%);
+  color: #7a1f32;
+  box-shadow: 0 10px 30px rgba(255, 176, 176, 0.35);
+  z-index: 4;
+  transform-origin: center center;
+}
+
+.yes.is-heart {
+  background: radial-gradient(circle at 50% 40%, #ff8fa3, #d61f46 72%);
+  color: #fff;
+  box-shadow: 0 0 0 8px rgba(255, 120, 140, 0.18), 0 18px 40px rgba(214, 31, 70, 0.45);
+}
+
+.yes-label {
+  display: inline-block;
+  font-size: 1.05rem;
+}
+
+.yes.is-heart .yes-label {
+  font-size: 1.55rem;
+}
+
+.no {
+  background: transparent;
+  color: #ffe8e4;
+  border: 1.5px solid rgba(255, 232, 228, 0.45);
+  z-index: 5;
+}
+
+.no-label {
+  display: inline-block;
+  font-size: 1.05rem;
+}
+
+.no.is-sad {
+  background: rgba(20, 8, 12, 0.28);
+  border-color: rgba(255, 210, 180, 0.5);
+}
+
+.no.is-sad .no-label {
+  font-size: 1.45rem;
+}
+
+.no.is-escaped {
+  position: fixed;
+  margin: 0;
+}
+
+.no:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.celebrate {
+  animation: rise 0.7s ease;
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #ffd9b0;
+}
+
+.celebrate h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 600;
+  margin: 6px 0 28px;
+}
+
+.album {
+  width: min(340px, 78vw);
+  z-index: 4;
+}
+
+.album-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5.15;
+}
+
+.polaroid {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  background: #fffaf4;
+  color: #4a2a30;
+  padding: 12px;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.86) rotate(8deg) translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.polaroid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #f3d5d8;
+  animation: kenburns 8s ease-in-out infinite alternate;
+}
+
+.polaroid.is-front {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) rotate(-1.6deg) translateY(0);
+  z-index: 3;
+}
+
+.polaroid.is-mid {
+  opacity: 0.95;
+  transform: scale(0.94) rotate(5.5deg) translate(18px, 10px);
+  z-index: 2;
+}
+
+.polaroid.is-back {
+  opacity: 0.8;
+  transform: scale(0.9) rotate(-7deg) translate(-16px, 14px);
+  z-index: 1;
+}
+
+.polaroid.is-hidden {
+  opacity: 0;
+  z-index: 0;
+}
+
+.album-caption {
+  margin-top: 18px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 247, 244, 0.35);
+}
+
+.dot.is-on {
+  background: #ffd9b0;
+  transform: scale(1.25);
+}
+
+.blessing {
+  max-width: 36ch;
+  margin-top: 28px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.rain-heart {
+  position: fixed;
+  top: -40px;
+  z-index: 3;
+  color: #ffb3c1;
+  pointer-events: none;
+  animation-name: heart-rain;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  text-shadow: 0 0 12px rgba(255, 150, 170, 0.55);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(24px);
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) rotate(220deg);
+    opacity: 0.15;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes heart-rain {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(40deg);
+    opacity: 0.15;
+  }
+}
+
+@media (max-width: 640px) {
+  .actions {
+    gap: 16px;
+  }
+
+  .yes,
+  .no {
+    min-width: 108px;
+    height: 50px;
+  }
+}

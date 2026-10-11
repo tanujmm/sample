@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#3a121c"/>
+      <stop offset="100%" stop-color="#d4a017"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#g)"/>
+  <text x="320" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="48" fill="#ffd9b0">26.11.2026</text>
+  <text x="320" y="450" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#fff7f4">shaadi</text>
+</svg>

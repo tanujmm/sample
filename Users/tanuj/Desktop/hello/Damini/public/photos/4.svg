@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8c3044"/>
+      <stop offset="100%" stop-color="#f6d6c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#g)"/>
+  <text x="320" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#fff7f4">family</text>
+</svg>
